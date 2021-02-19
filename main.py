@@ -4074,7 +4074,7 @@ def on_postback(event):
         container_obj = FlexSendMessage.new_from_json_dict(flex)
         line_bot_api.reply_message(reply_token,messages=container_obj)
     if "up13" in postback_msg and user_id == up[user_id]['user_id'] and (up[user_id]['n'] == 19 or up[user_id]['n'] == 21):
-        sevedata = seve(id,up)
+        sevedata = seve(user_id,up)
         if sevedata:
             up[user_id]['n'] = 20
             data = updata2(up,user_id)
