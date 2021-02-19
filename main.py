@@ -4117,12 +4117,12 @@ def handle_message(event):
             data = updata(up,user_id)
             flex = {"type": "flex","altText": "あなたの情報","contents":data}
             container_obj = FlexSendMessage.new_from_json_dict(flex)
-            line_bot_api.reply_message(reply_token,messages=container_obj)
+            line_bot_api.reply_message(msg_from,messages=container_obj)
         else:
             data = up1()
             flex = {"type": "flex","altText": "確認","contents":data}
             container_obj = FlexSendMessage.new_from_json_dict(flex)
-            line_bot_api.reply_message(reply_token,messages=container_obj)
+            line_bot_api.reply_message(msg_from,messages=container_obj)
         return
         '''
         data = up1()
