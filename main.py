@@ -4114,10 +4114,16 @@ def handle_message(event):
         up,user_data = idcheck(user_id)
         up[user_id]['n'] = 1
         if user_data:
+            data = up1()
+            flex = {"type": "flex","altText": "確認","contents":data}
+            container_obj = FlexSendMessage.new_from_json_dict(flex)
+            line_bot_api.reply_message(msg_from,messages=container_obj)
+            '''
             data = updata(up,user_id)
             flex = {"type": "flex","altText": "あなたの情報","contents":data}
             container_obj = FlexSendMessage.new_from_json_dict(flex)
             line_bot_api.reply_message(msg_from,messages=container_obj)
+            '''
         else:
             data = up1()
             flex = {"type": "flex","altText": "確認","contents":data}
@@ -4136,30 +4142,6 @@ def handle_message(event):
 
 
     else:
-        if user_id == set[user_id]['user_id'] and set[user_id]['n'] == 3:
-            set[user_id]['n'] = 4
-            set[user_id]['twitter'] = msg_text
-            data = data1(set[user_id]['twitter'])
-            flex = {"type": "flex","altText": "確認","contents":data}
-            container_obj = FlexSendMessage.new_from_json_dict(flex)
-            line_bot_api.reply_message(msg_from,messages=container_obj)
-            return
-        if user_id == set[user_id]['user_id'] and set[user_id]['n'] == 5:
-            set[user_id]['n'] = 6
-            set[user_id]['d_n'] = msg_text
-            data = data3(set[user_id]['d_n'])
-            flex = {"type": "flex","altText": "確認","contents":data}
-            container_obj = FlexSendMessage.new_from_json_dict(flex)
-            line_bot_api.reply_message(msg_from,messages=container_obj)
-            return
-        if user_id == set[user_id]['user_id'] and set[user_id]['n'] == 7:
-            set[user_id]['n'] = 8
-            set[user_id]['d_t'] = msg_text
-            data = data7(set[user_id]['d_t'])
-            flex = {"type": "flex","altText": "確認","contents":data}
-            container_obj = FlexSendMessage.new_from_json_dict(flex)
-            line_bot_api.reply_message(msg_from,messages=container_obj)
-            return
         if user_id == up[user_id]['user_id'] and up[user_id]['n'] == 2:
             up[user_id]['n'] = 3
             up[user_id]['one_text'] = msg_text
@@ -4208,6 +4190,32 @@ def handle_message(event):
             container_obj = FlexSendMessage.new_from_json_dict(flex)
             line_bot_api.reply_message(msg_from,messages=container_obj)
             return
+            
+        if user_id == set[user_id]['user_id'] and set[user_id]['n'] == 3:
+            set[user_id]['n'] = 4
+            set[user_id]['twitter'] = msg_text
+            data = data1(set[user_id]['twitter'])
+            flex = {"type": "flex","altText": "確認","contents":data}
+            container_obj = FlexSendMessage.new_from_json_dict(flex)
+            line_bot_api.reply_message(msg_from,messages=container_obj)
+            return
+        if user_id == set[user_id]['user_id'] and set[user_id]['n'] == 5:
+            set[user_id]['n'] = 6
+            set[user_id]['d_n'] = msg_text
+            data = data3(set[user_id]['d_n'])
+            flex = {"type": "flex","altText": "確認","contents":data}
+            container_obj = FlexSendMessage.new_from_json_dict(flex)
+            line_bot_api.reply_message(msg_from,messages=container_obj)
+            return
+        if user_id == set[user_id]['user_id'] and set[user_id]['n'] == 7:
+            set[user_id]['n'] = 8
+            set[user_id]['d_t'] = msg_text
+            data = data7(set[user_id]['d_t'])
+            flex = {"type": "flex","altText": "確認","contents":data}
+            container_obj = FlexSendMessage.new_from_json_dict(flex)
+            line_bot_api.reply_message(msg_from,messages=container_obj)
+            return
+
 
 
 
