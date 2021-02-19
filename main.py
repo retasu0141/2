@@ -3803,6 +3803,7 @@ def updata():
 '''
 
 def idcheck(id):
+    global up
     conn = get_connection()
     cur = conn.cursor()
     cur.execute("ROLLBACK")
@@ -3898,6 +3899,7 @@ def join(event):
 
 @handler.add(PostbackEvent)
 def on_postback(event):
+    global up
     reply_token = event.reply_token
     user_id = event.source.user_id
     postback_msg = event.postback.data
@@ -4090,6 +4092,7 @@ def on_postback(event):
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
+    global up
     global set_
     global stoptime
     global stoppoint
@@ -4190,7 +4193,7 @@ def handle_message(event):
             container_obj = FlexSendMessage.new_from_json_dict(flex)
             line_bot_api.reply_message(msg_from,messages=container_obj)
             return
-            
+
         if user_id == set[user_id]['user_id'] and set[user_id]['n'] == 3:
             set[user_id]['n'] = 4
             set[user_id]['twitter'] = msg_text
