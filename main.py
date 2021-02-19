@@ -4111,7 +4111,7 @@ def handle_message(event):
         return
 
     if msg_text == "情報アップ":
-        up,user_data = idcheck()
+        up,user_data = idcheck(user_id)
         up[user_id]['n'] = 1
         if user_data:
             data = updata(up,user_id)
