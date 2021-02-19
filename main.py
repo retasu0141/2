@@ -4110,7 +4110,7 @@ def handle_message(event):
         line_bot_api.reply_message(msg_from,TextSendMessage(text=user_id))
         return
 
-    if msg_text == '"情報アップ":
+    if msg_text == "情報アップ":
         up,user_data = idcheck()
         up[user_id]['n'] = 1
         if user_data:
