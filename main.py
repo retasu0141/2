@@ -3475,7 +3475,7 @@ def up9():
     }
     return data
 
-def updata2():
+def updata2(up,id):
     data = {
       "type": "bubble",
       "body": {
@@ -3820,7 +3820,7 @@ def idcheck(id):
     text = '・納期厳守\n・即レス\n・視聴維持率up'
     text_ = '○○はお任せください！'
 
-    cur.execute("insert into db values('{user_id}','{one_text}','{text}','{y_url}','{t_url}','{s_g1}','{s_g2}','{s_m}','{s_n}','{test}')".format(user_id=id,one_text=text,text=text_,y_url='なし',t_url='なし',s_g1='0',s_g2='0',s_m='0',s_n='0',test='test'))
+    cur.execute("insert into db values('{user_id}','{one_text}','{text}','{y_url}','{t_url}','{s_g1}','{s_g2}','{s_m}','{s_n}','{test}')".format(user_id=id,one_text=text,text=text_,y_url='http://url_none.com',t_url='http://url_none.com',s_g1='0',s_g2='0',s_m='0',s_n='0',test='test'))
     conn.commit()
     up[id] = {'user_id':id,'n':1,'one_text':text,'text':text_,'y_url':'なし','t_url':'なし','s_g1':'0','s_g2':'0','s_m':'0','s_n':'0'}
     data = False
@@ -4117,6 +4117,7 @@ def handle_message(event):
         up,user_data = idcheck(user_id)
         up[user_id]['n'] = 1
         if user_data:
+            '''
             data = up1()
             flex = {"type": "flex","altText": "確認","contents":data}
             container_obj = FlexSendMessage.new_from_json_dict(flex)
@@ -4126,7 +4127,6 @@ def handle_message(event):
             flex = {"type": "flex","altText": "あなたの情報","contents":data}
             container_obj = FlexSendMessage.new_from_json_dict(flex)
             line_bot_api.reply_message(msg_from,messages=container_obj)
-            '''
         else:
             data = up1()
             flex = {"type": "flex","altText": "確認","contents":data}
