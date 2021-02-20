@@ -5382,7 +5382,6 @@ def handle_message(event):
         up,user_data = idcheck(user_id)
         up[user_id]['n'] = 1
         if user_data:
-            '''
             data = up1()
             flex = {"type": "flex","altText": "確認","contents":data}
             container_obj = FlexSendMessage.new_from_json_dict(flex)
@@ -5392,6 +5391,7 @@ def handle_message(event):
             flex = {"type": "flex","altText": "あなたの情報","contents":data}
             container_obj = FlexSendMessage.new_from_json_dict(flex)
             line_bot_api.reply_message(msg_from,messages=container_obj)
+            '''
         else:
             data = up1()
             flex = {"type": "flex","altText": "確認","contents":data}
