@@ -4781,7 +4781,7 @@ def c6(edi):
             "contents": [
               {
                 "type": "text",
-                "text": profile.displayName,
+                "text": profile.display_name,
                 "wrap": True,
                 "weight": "bold",
                 "size": "xl",
@@ -4850,7 +4850,7 @@ def c6(edi):
               },
               {
                 "type": "text",
-                "text": profile.displayName+"の強み",
+                "text": profile.display_name+"の強み",
                 "wrap": True,
                 "weight": "bold",
                 "size": "xl",
