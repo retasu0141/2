@@ -3796,6 +3796,1134 @@ def updata2(up,id):
     }
     return data
 
+#------------------------クライアント-------------------------------------------------#
+
+def c1(game_n,en_n,bu_n,vlog_n):
+    data = {
+      "type": "carousel",
+      "contents": [
+        {
+          "type": "bubble",
+          "hero": {
+            "type": "image",
+            "size": "full",
+            "aspectRatio": "20:13",
+            "aspectMode": "cover",
+            "url": "https://cdn.pixabay.com/photo/2020/01/04/14/28/youtube-4740743_1280.jpg"
+          },
+          "body": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "募集される動画のジャンルはなんですか？",
+                "wrap": True,
+                "weight": "bold",
+                "size": "lg",
+                "align": "center"
+              },
+              {
+                "type": "box",
+                "layout": "baseline",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "右のカルーセルから\n選択してください！",
+                    "wrap": True,
+                    "weight": "regular",
+                    "size": "xl",
+                    "align": "center"
+                  }
+                ]
+              }
+            ]
+          },
+          "footer": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": []
+          }
+        },
+        {
+          "type": "bubble",
+          "hero": {
+            "type": "image",
+            "size": "full",
+            "aspectRatio": "20:13",
+            "aspectMode": "cover",
+            "url": "https://cdn.pixabay.com/photo/2016/10/13/00/22/illustration-1736462_1280.png"
+          },
+          "body": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "ゲーム実況",
+                "wrap": True,
+                "weight": "bold",
+                "size": "xl",
+                "align": "center"
+              },
+              {
+                "type": "box",
+                "layout": "baseline",
+                "flex": 1,
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": str(game_n)+"人の編集者がいます",
+                    "wrap": True,
+                    "weight": "bold",
+                    "size": "xl",
+                    "align": "center"
+                  }
+                ]
+              }
+            ]
+          },
+          "footer": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "button",
+                "flex": 2,
+                "style": "primary",
+                "action": {
+                  "type": "postback",
+                  "label": "このジャンルで絞る",
+                  "data": "c1ゲーム実況",
+                  "displayText": "ゲーム実況で絞る"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "bubble",
+          "hero": {
+            "type": "image",
+            "size": "full",
+            "aspectRatio": "20:13",
+            "aspectMode": "cover",
+            "url": "https://cdn.pixabay.com/photo/2015/01/08/18/24/children-593313_1280.jpg"
+          },
+          "body": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "エンタメ系",
+                "wrap": True,
+                "weight": "bold",
+                "size": "xl",
+                "align": "center"
+              },
+              {
+                "type": "box",
+                "layout": "baseline",
+                "flex": 1,
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": str(en_n)+"人の編集者がいます",
+                    "wrap": True,
+                    "weight": "bold",
+                    "size": "xl",
+                    "align": "center"
+                  }
+                ]
+              }
+            ]
+          },
+          "footer": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "button",
+                "flex": 2,
+                "style": "primary",
+                "action": {
+                  "type": "postback",
+                  "label": "このジャンルで絞る",
+                  "data": "c1エンタメ",
+                  "displayText": "エンタメ系で絞る"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "bubble",
+          "hero": {
+            "type": "image",
+            "size": "full",
+            "aspectRatio": "20:13",
+            "aspectMode": "cover",
+            "url": "https://cdn.pixabay.com/photo/2016/02/19/11/19/office-1209640_1280.jpg"
+          },
+          "body": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "ビジネス系",
+                "wrap": True,
+                "weight": "bold",
+                "size": "xl",
+                "align": "center"
+              },
+              {
+                "type": "box",
+                "layout": "baseline",
+                "flex": 1,
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": str(bu_n)+"人の編集者がいます",
+                    "wrap": True,
+                    "weight": "bold",
+                    "size": "xl",
+                    "align": "center"
+                  }
+                ]
+              }
+            ]
+          },
+          "footer": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "button",
+                "flex": 2,
+                "style": "primary",
+                "action": {
+                  "type": "postback",
+                  "label": "このジャンルで絞る",
+                  "data": "c1ビジネス",
+                  "displayText": "ビジネス系で絞る"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "bubble",
+          "hero": {
+            "type": "image",
+            "size": "full",
+            "aspectRatio": "20:13",
+            "aspectMode": "cover",
+            "url": "https://cdn.pixabay.com/photo/2021/02/02/02/34/cafe-5972490_1280.jpg"
+          },
+          "body": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "Vlog",
+                "wrap": True,
+                "weight": "bold",
+                "size": "xl",
+                "align": "center"
+              },
+              {
+                "type": "box",
+                "layout": "baseline",
+                "flex": 1,
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": str(vlog_n)+"人の編集者がいます",
+                    "wrap": True,
+                    "weight": "bold",
+                    "size": "xl",
+                    "align": "center"
+                  }
+                ]
+              }
+            ]
+          },
+          "footer": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "button",
+                "flex": 2,
+                "style": "primary",
+                "action": {
+                  "type": "postback",
+                  "label": "このジャンルで絞る",
+                  "data": "c1Vlog",
+                  "displayText": "Vlogで絞る"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "bubble",
+          "hero": {
+            "type": "image",
+            "size": "full",
+            "aspectRatio": "20:13",
+            "aspectMode": "cover",
+            "url": "https://cdn.pixabay.com/photo/2015/01/07/16/37/wood-591631_1280.jpg"
+          },
+          "body": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "その他のジャンル",
+                "wrap": True,
+                "weight": "bold",
+                "size": "xl",
+                "align": "center"
+              },
+              {
+                "type": "box",
+                "layout": "baseline",
+                "flex": 1,
+                "contents": []
+              }
+            ]
+          },
+          "footer": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "button",
+                "flex": 2,
+                "style": "primary",
+                "action": {
+                  "type": "postback",
+                  "label": "このジャンルで絞る",
+                  "data": "c1その他",
+                  "displayText": "その他で絞る"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+    return data
+
+
+def c2(kk_m,om_n,os_n,kw_n):
+    data = {
+      "type": "carousel",
+      "contents": [
+        {
+          "type": "bubble",
+          "hero": {
+            "type": "image",
+            "size": "full",
+            "aspectRatio": "20:13",
+            "aspectMode": "cover",
+            "url": "https://cdn.pixabay.com/photo/2016/08/27/12/06/website-1624028_1280.png"
+          },
+          "body": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "募集される動画はどのような雰囲気ですか？",
+                "wrap": True,
+                "weight": "bold",
+                "size": "lg",
+                "align": "center"
+              },
+              {
+                "type": "box",
+                "layout": "baseline",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "右のカルーセルから\n選択してください！",
+                    "wrap": True,
+                    "weight": "regular",
+                    "size": "xl",
+                    "align": "center"
+                  }
+                ]
+              }
+            ]
+          },
+          "footer": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": []
+          }
+        },
+        {
+          "type": "bubble",
+          "hero": {
+            "type": "image",
+            "size": "full",
+            "aspectRatio": "20:13",
+            "aspectMode": "cover",
+            "url": "https://cdn.pixabay.com/photo/2016/02/11/15/32/skull-1193784_1280.jpg"
+          },
+          "body": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "かっこいい",
+                "wrap": True,
+                "weight": "bold",
+                "size": "xl",
+                "align": "center"
+              },
+              {
+                "type": "box",
+                "layout": "baseline",
+                "flex": 1,
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": str(kk_n)+"人の編集者がいます",
+                    "wrap": True,
+                    "weight": "bold",
+                    "size": "xl",
+                    "align": "center"
+                  }
+                ]
+              }
+            ]
+          },
+          "footer": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "button",
+                "flex": 2,
+                "style": "primary",
+                "action": {
+                  "type": "postback",
+                  "label": "このジャンルで絞る",
+                  "data": "c2かっこいい",
+                  "displayText": "かっこいいで絞る"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "bubble",
+          "hero": {
+            "type": "image",
+            "size": "full",
+            "aspectRatio": "20:13",
+            "aspectMode": "cover",
+            "url": "https://cdn.pixabay.com/photo/2016/07/16/13/13/hang-out-1521663_1280.jpg"
+          },
+          "body": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "面白い",
+                "wrap": True,
+                "weight": "bold",
+                "size": "xl",
+                "align": "center"
+              },
+              {
+                "type": "box",
+                "layout": "baseline",
+                "flex": 1,
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": str(om_n)+"人の編集者がいます",
+                    "wrap": True,
+                    "weight": "bold",
+                    "size": "xl",
+                    "align": "center"
+                  }
+                ]
+              }
+            ]
+          },
+          "footer": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "button",
+                "flex": 2,
+                "style": "primary",
+                "action": {
+                  "type": "postback",
+                  "label": "このジャンルで絞る",
+                  "data": "c2面白い",
+                  "displayText": "面白いで絞る"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "bubble",
+          "hero": {
+            "type": "image",
+            "size": "full",
+            "aspectRatio": "20:13",
+            "aspectMode": "cover",
+            "url": "https://cdn.pixabay.com/photo/2014/08/21/09/27/coffee-423198_1280.jpg"
+          },
+          "body": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "オシャレ",
+                "wrap": True,
+                "weight": "bold",
+                "size": "xl",
+                "align": "center"
+              },
+              {
+                "type": "box",
+                "layout": "baseline",
+                "flex": 1,
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": str(os_n)+"人の編集者がいます",
+                    "wrap": True,
+                    "weight": "bold",
+                    "size": "xl",
+                    "align": "center"
+                  }
+                ]
+              }
+            ]
+          },
+          "footer": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "button",
+                "flex": 2,
+                "style": "primary",
+                "action": {
+                  "type": "postback",
+                  "label": "このジャンルで絞る",
+                  "data": "c2オシャレ",
+                  "displayText": "オシャレで絞る"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "bubble",
+          "hero": {
+            "type": "image",
+            "size": "full",
+            "aspectRatio": "20:13",
+            "aspectMode": "cover",
+            "url": "https://cdn.pixabay.com/photo/2014/10/01/10/44/hedgehog-468228_1280.jpg"
+          },
+          "body": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "可愛い",
+                "wrap": True,
+                "weight": "bold",
+                "size": "xl",
+                "align": "center"
+              },
+              {
+                "type": "box",
+                "layout": "baseline",
+                "flex": 1,
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": str(kw_n)+"人の編集者がいます",
+                    "wrap": True,
+                    "weight": "bold",
+                    "size": "xl",
+                    "align": "center"
+                  }
+                ]
+              }
+            ]
+          },
+          "footer": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "button",
+                "flex": 2,
+                "style": "primary",
+                "action": {
+                  "type": "postback",
+                  "label": "このジャンルで絞る",
+                  "data": "c2可愛い",
+                  "displayText": "可愛いで絞る"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "bubble",
+          "hero": {
+            "type": "image",
+            "size": "full",
+            "aspectRatio": "20:13",
+            "aspectMode": "cover",
+            "url": "https://cdn.pixabay.com/photo/2015/10/14/13/52/pattern-987639_1280.jpg"
+          },
+          "body": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "その他",
+                "wrap": True,
+                "weight": "bold",
+                "size": "xl",
+                "align": "center"
+              },
+              {
+                "type": "box",
+                "layout": "baseline",
+                "flex": 1,
+                "contents": []
+              }
+            ]
+          },
+          "footer": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "button",
+                "flex": 2,
+                "style": "primary",
+                "action": {
+                  "type": "postback",
+                  "label": "このジャンルで絞る",
+                  "data": "c2その他",
+                  "displayText": "その他で絞る"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+    return data
+
+def c3():
+    data = {
+      "type": "bubble",
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "想定する素材尺",
+            "weight": "bold",
+            "size": "xxl",
+            "margin": "md",
+            "align": "center"
+          },
+          {
+            "type": "separator",
+            "margin": "xxl"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "margin": "xxl",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "普段の動画の素材尺に近いものを",
+                "size": "xs",
+                "color": "#aaaaaa",
+                "wrap": True,
+                "align": "center"
+              },
+              {
+                "type": "text",
+                "text": "下から選択しタップしてください",
+                "size": "xs",
+                "color": "#aaaaaa",
+                "wrap": True,
+                "align": "center",
+                "margin": "none"
+              },
+              {
+                "type": "button",
+                "action": {
+                  "type": "postback",
+                  "label": "5分未満",
+                  "data": "c35分未満",
+                  "displayText": "5分未満を選択"
+                },
+                "style": "secondary"
+              },
+              {
+                "type": "button",
+                "action": {
+                  "type": "postback",
+                  "label": "5分~10分",
+                  "data": "c35分~10分",
+                  "displayText": "5分~10分を選択"
+                },
+                "style": "secondary"
+              },
+              {
+                "type": "button",
+                "action": {
+                  "type": "postback",
+                  "label": "10分~20分",
+                  "data": "c310分~20分",
+                  "displayText": "10分~20分を選択"
+                },
+                "style": "secondary"
+              },
+              {
+                "type": "button",
+                "action": {
+                  "type": "postback",
+                  "label": "20分~1時間",
+                  "data": "c320分~1時間",
+                  "displayText": "20分~1時間を選択"
+                },
+                "style": "secondary"
+              },
+              {
+                "type": "button",
+                "action": {
+                  "type": "postback",
+                  "label": "1時間以上",
+                  "data": "c31時間以上",
+                  "displayText": "1時間以上を選択"
+                },
+                "style": "secondary"
+              }
+            ]
+          }
+        ]
+      },
+      "styles": {
+        "footer": {
+          "separator": True
+        }
+      }
+    }
+    return data
+
+def c4():
+    data = {
+      "type": "bubble",
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "週の投稿頻度の設定",
+            "weight": "bold",
+            "size": "xl",
+            "margin": "md",
+            "align": "center"
+          },
+          {
+            "type": "separator",
+            "margin": "xxl"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "margin": "xxl",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "下から希望する週の納品数を",
+                "size": "xs",
+                "color": "#aaaaaa",
+                "wrap": True,
+                "align": "center"
+              },
+              {
+                "type": "text",
+                "text": "選択しタップしてください",
+                "size": "xs",
+                "color": "#aaaaaa",
+                "wrap": True,
+                "align": "center",
+                "margin": "none"
+              },
+              {
+                "type": "button",
+                "action": {
+                  "type": "postback",
+                  "label": "毎日投稿(週7本)",
+                  "data": "c4週7本",
+                  "displayText": "毎日投稿(週7本)を選択"
+                },
+                "style": "secondary"
+              },
+              {
+                "type": "button",
+                "action": {
+                  "type": "postback",
+                  "label": "週5~7本",
+                  "data": "c4週5~7本",
+                  "displayText": "週5~7本を選択"
+                },
+                "style": "secondary"
+              },
+              {
+                "type": "button",
+                "action": {
+                  "type": "postback",
+                  "label": "週3~5本",
+                  "data": "c4週3~5本",
+                  "displayText": "週3~5本を選択"
+                },
+                "style": "secondary"
+              },
+              {
+                "type": "button",
+                "action": {
+                  "type": "postback",
+                  "label": "週3本以下",
+                  "data": "c4週3本以下",
+                  "displayText": "週3本以下を選択"
+                },
+                "style": "secondary"
+              }
+            ]
+          }
+        ]
+      },
+      "styles": {
+        "footer": {
+          "separator": True
+        }
+      }
+    }
+    return data
+
+def c5():
+    data = {
+      "type": "bubble",
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "予算の設定",
+            "weight": "bold",
+            "size": "xxl",
+            "margin": "md",
+            "align": "center"
+          },
+          {
+            "type": "separator",
+            "margin": "xxl"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "margin": "xxl",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "下から希望する単価を",
+                "size": "xs",
+                "color": "#aaaaaa",
+                "wrap": True,
+                "align": "center"
+              },
+              {
+                "type": "text",
+                "text": "選択しタップしてください",
+                "size": "xs",
+                "color": "#aaaaaa",
+                "wrap": True,
+                "align": "center",
+                "margin": "none"
+              },
+              {
+                "type": "button",
+                "action": {
+                  "type": "postback",
+                  "label": "~3000円",
+                  "data": "c5~3000円",
+                  "displayText": "~3000円を選択"
+                },
+                "style": "secondary"
+              },
+              {
+                "type": "button",
+                "action": {
+                  "type": "postback",
+                  "label": "3000~5000円",
+                  "data": "c53000~5000円",
+                  "displayText": "3000~5000円を選択"
+                },
+                "style": "secondary"
+              },
+              {
+                "type": "button",
+                "action": {
+                  "type": "postback",
+                  "label": "5000円~1万円",
+                  "data": "c55000円~1万円",
+                  "displayText": "5000円~1万円を選択"
+                },
+                "style": "secondary"
+              },
+              {
+                "type": "button",
+                "action": {
+                  "type": "postback",
+                  "label": "1万円以上",
+                  "data": "c51万円以上",
+                  "displayText": "1万円以上を選択"
+                },
+                "style": "secondary"
+              }
+            ]
+          }
+        ]
+      },
+      "styles": {
+        "footer": {
+          "separator": True
+        }
+      }
+    }
+    return data
+
+
+def c6(edi):
+    profile = line_bot_api.get_profile(edi['user_id'])
+    data = {
+      "type": "carousel",
+      "contents": [
+        {
+          "type": "bubble",
+          "hero": {
+            "type": "image",
+            "size": "full",
+            "aspectRatio": "20:13",
+            "aspectMode": "cover",
+            "url": profile.pictureUrl
+          },
+          "body": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": profile.displayName,
+                "wrap": True,
+                "weight": "bold",
+                "size": "xl",
+                "align": "center"
+              },
+              {
+                "type": "text",
+                "text": "【動画編集ジャンル】",
+                "align": "center"
+              },
+              {
+                "type": "text",
+                "text": edi['s_g1']+"・"+edi['s_g2'],
+                "align": "center"
+              },
+              {
+                "type": "text",
+                "text": "【1週間の納品可能本数】",
+                "align": "center"
+              },
+              {
+                "type": "text",
+                "text": edi['s_n'],
+                "align": "center"
+              },
+              {
+                "type": "text",
+                "text": "【希望単価】",
+                "align": "center"
+              },
+              {
+                "type": "text",
+                "text": edi['s_m'],
+                "align": "center"
+              }
+            ]
+          },
+          "footer": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": []
+          }
+        },
+        {
+          "type": "bubble",
+          "body": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "編集者からの一言",
+                "wrap": True,
+                "weight": "bold",
+                "size": "xl",
+                "align": "center"
+              },
+              {
+                "type": "text",
+                "text": edi['text'],
+                "align": "center",
+                "wrap": True,
+                "margin": "none"
+              },
+              {
+                "type": "text",
+                "text": profile.displayName+"の強み",
+                "wrap": True,
+                "weight": "bold",
+                "size": "xl",
+                "align": "center",
+                "margin": "md"
+              },
+              {
+                "type": "text",
+                "text": edi['one_text'],
+                "align": "center",
+                "wrap": True,
+                "margin": "none"
+              },
+              {
+                "type": "separator",
+                "margin": "xxl"
+              }
+            ]
+          },
+          "footer": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "ポートフォリオ",
+                "wrap": True,
+                "weight": "bold",
+                "size": "xl",
+                "align": "center",
+                "margin": "xl"
+              },
+              {
+                "type": "button",
+                "action": {
+                  "type": "uri",
+                  "label": "YouTubeで見る",
+                  "uri": edi['y_url']
+                },
+                "style": "primary",
+                "color": "#cd201f"
+              },
+              {
+                "type": "separator",
+                "margin": "xxl"
+              },
+              {
+                "type": "text",
+                "text": "Twitterアカウント",
+                "wrap": True,
+                "weight": "bold",
+                "size": "xl",
+                "align": "center",
+                "margin": "xxl"
+              },
+              {
+                "type": "button",
+                "action": {
+                  "type": "uri",
+                  "label": "Twitterを開く",
+                  "uri": edi['t_url']
+                },
+                "style": "primary",
+                "color": "#55acee"
+              }
+            ]
+          }
+        }
+      ]
+    }
+    return data
+
 '''
 def updata():
     data = {}
@@ -3858,6 +4986,74 @@ def seve(id,up):
     except Exception as e:
         print (str(e))
         return
+
+def gcheck(g):
+    global up
+    conn = get_connection()
+    cur = conn.cursor()
+    cur.execute("ROLLBACK")
+    conn.commit()
+    cur.execute('SELECT * FROM db')
+    n_data = []
+    for row in cur:
+        if g in row:
+            #user_id = row[0],one_text=row[1]...s_n=row[8]
+            edi = {'user_id':row[0],'one_text':row[1],'text':row[2],'y_url':row[3],'t_url':row[4],'s_g1':row[5],'s_g2':row[6],'s_m':row[7],'s_n':row[8]}
+            n_data.append(edi)
+    return n_data
+
+def edicheck(set,id):
+    g = set[id]['s_g1']
+    g2 = set[id]['s_g2']
+    s_n = set[id]['s_n']
+    conn = get_connection()
+    cur = conn.cursor()
+    cur.execute("ROLLBACK")
+    conn.commit()
+    cur.execute('SELECT * FROM db')
+    if g == 'その他':
+        n_data = []
+        for row in cur:
+            if 'ゲーム実況' not in row and 'エンタメ' not in row and 'ビジネス' not in row and 'Vlog' not in row and '0' not in row:
+                #user_id = row[0],one_text=row[1]...s_n=row[8]
+                edi = {'user_id':row[0],'one_text':row[1],'text':row[2],'y_url':row[3],'t_url':row[4],'s_g1':row[5],'s_g2':row[6],'s_m':row[7],'s_n':row[8]}
+                n_data.append(edi)
+        return n_data[0:4]
+
+    n_data = []
+    for row in cur:
+        if g in row:
+            #user_id = row[0],one_text=row[1]...s_n=row[8]
+            edi = {'user_id':row[0],'one_text':row[1],'text':row[2],'y_url':row[3],'t_url':row[4],'s_g1':row[5],'s_g2':row[6],'s_m':row[7],'s_n':row[8]}
+            n_data.append(edi)
+    if len(n_data) >= 1:
+        edi_1 = []
+        for edi in n_data:
+            if g2 == edi['s_g2']:
+                if s_n == edi['s_n']:
+                    edi_1.append(edi)
+                    n_data.remove(edi)
+        for edi in n_data:
+            if g2 == edi['s_g2']:
+                edi_1.append(edi)
+                n_data.remove(edi)
+        edi_1.extend(n_data)
+        return edi_1[0:4]
+    else:
+        n_data = []
+        for row in cur:
+            if g2 in row:
+                #user_id = row[0],one_text=row[1]...s_n=row[8]
+                edi = {'user_id':row[0],'one_text':row[1],'text':row[2],'y_url':row[3],'t_url':row[4],'s_g1':row[5],'s_g2':row[6],'s_m':row[7],'s_n':row[8]}
+                n_data.append(edi)
+        if len(n_data) >= 1:
+            return n_data[0:4]
+
+
+
+
+
+    return n_data
 
 #環境変数取得
 YOUR_CHANNEL_ACCESS_TOKEN = os.environ["YOUR_CHANNEL_ACCESS_TOKEN"]
@@ -4089,6 +5285,75 @@ def on_postback(event):
     if "up14" in postback_msg and user_id == up[user_id]['user_id'] and (up[user_id]['n'] == 20 or up[user_id]['n'] == 22):
         line_bot_api.reply_message(reply_token,TextSendMessage(text="保存が完了しました！"))
 
+#------------------------クライアント-------------------------------------------------#
+
+    if "c1" in postback_msg and user_id == set[user_id]['user_id'] and set[user_id]['cn'] == 1:
+        set[user_id]['cn'] = 2
+        text_ = postback_msg.split('c1')
+        set[user_id]['s_g1'] = text_[1]
+        kk_n = gcheck('かっこいい')
+        om_n = gcheck('面白い')
+        os_n = gcheck('オシャレ')
+        kw_n = gcheck('可愛い')
+        data = c2(len(kk_n),len(om_n),len(os_n),len(kw_n))
+        flex = {"type": "flex","altText": "ジャンル2","contents":data}
+        container_obj = FlexSendMessage.new_from_json_dict(flex)
+        line_bot_api.reply_message(reply_token,messages=container_obj)
+    if "c2" in postback_msg and user_id == set[user_id]['user_id'] and set[user_id]['cn'] == 2:
+        set[user_id]['cn'] = 3
+        text_ = postback_msg.split('c2')
+        set[user_id]['s_g2'] = text_[1]
+        data = c3()
+        flex = {"type": "flex","altText": "素材尺の選択","contents":data}
+        container_obj = FlexSendMessage.new_from_json_dict(flex)
+        line_bot_api.reply_message(reply_token,messages=container_obj)
+    if "c3" in postback_msg and user_id == set[user_id]['user_id'] and set[user_id]['cn'] == 3:
+        set[user_id]['cn'] = 4
+        text_ = postback_msg.split('c3')
+        set[user_id]['s_t'] = text_[1]
+        data = c4()
+        flex = {"type": "flex","altText": "投稿頻度の設定","contents":data}
+        container_obj = FlexSendMessage.new_from_json_dict(flex)
+        line_bot_api.reply_message(reply_token,messages=container_obj)
+    if "c4" in postback_msg and user_id == set[user_id]['user_id'] and set[user_id]['cn'] == 4:
+        set[user_id]['cn'] = 5
+        text_ = postback_msg.split('c4')
+        set[user_id]['s_n'] = text_[1]
+        data = c5()
+        flex = {"type": "flex","altText": "予算の設定","contents":data}
+        container_obj = FlexSendMessage.new_from_json_dict(flex)
+        line_bot_api.reply_message(reply_token,messages=container_obj)
+    if "c5" in postback_msg and user_id == set[user_id]['user_id'] and set[user_id]['cn'] == 5:
+        set[user_id]['cn'] = 6
+        text_ = postback_msg.split('c5')
+        set[user_id]['s_m'] = text_[1]
+        edi_data = edicheck(set,user_id)
+        '''if len(edi_data) == 0:
+            data = c6_0()
+        if len(edi_data) == 1:
+            data = c6_1()
+        if len(edi_data) == 2:
+            data = c6_2()
+        if len(edi_data) == 3:
+            data = c6_3()
+        if len(edi_data) == 4:
+            data = c6_4()
+        if len(edi_data) == 5:
+            data = c6_5()'''
+        if len(edi_data) >= 1:
+            flexs = []
+            for edi in edi_data:
+                data = c6(edi)
+                flex = {"type": "flex","altText": "編集者","contents":data}
+                container_obj = FlexSendMessage.new_from_json_dict(flex)
+                flexs.append(container_obj)
+            line_bot_api.reply_message(reply_token,messages=flexs)
+        else:
+            line_bot_api.reply_message(reply_token,TextSendMessage(text="編集者が見つかりませんでした"))
+
+
+
+
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
@@ -4140,6 +5405,16 @@ def handle_message(event):
         container_obj = FlexSendMessage.new_from_json_dict(flex)
         line_bot_api.reply_message(msg_from,messages=container_obj)
         '''
+    if msg_text == '編集者を探す':
+        set[user_id] = {'user_id':user_id,'cn':1,'s_g1':'','s_g2':'','s_t':'','s_m':'','s_n':'','text':''}
+        game_n = gcheck('ゲーム実況')
+        en_n = gcheck('エンタメ')
+        bu_n = gcheck('ビジネス')
+        vlog_n = gcheck('Vlog')
+        data = c1(len(game_n),len(en_n),len(bu_n),len(vlog_n))
+        flex = {"type": "flex","altText": "ジャンル1","contents":data}
+        container_obj = FlexSendMessage.new_from_json_dict(flex)
+        line_bot_api.reply_message(msg_from,messages=container_obj)
 
 
 
