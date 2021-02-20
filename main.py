@@ -4133,7 +4133,7 @@ def c1(game_n,en_n,bu_n,vlog_n):
     return data
 
 
-def c2(kk_m,om_n,os_n,kw_n):
+def c2(kk_n,om_n,os_n,kw_n):
     data = {
       "type": "carousel",
       "contents": [
