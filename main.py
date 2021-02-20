@@ -5437,20 +5437,28 @@ def handle_message(event):
             line_bot_api.reply_message(msg_from,messages=container_obj)
             return
         if user_id == up[user_id]['user_id'] and up[user_id]['n'] == 6:
-            up[user_id]['n'] = 7
-            up[user_id]['y_url'] = msg_text
-            data = uptest(up[user_id]['y_url'],'up4','up3')
-            flex = {"type": "flex","altText": "確認","contents":data}
-            container_obj = FlexSendMessage.new_from_json_dict(flex)
-            line_bot_api.reply_message(msg_from,messages=container_obj)
+            if 'https://' in msg_text:
+                up[user_id]['n'] = 7
+                up[user_id]['y_url'] = msg_text
+                data = uptest(up[user_id]['y_url'],'up4','up3')
+                flex = {"type": "flex","altText": "確認","contents":data}
+                container_obj = FlexSendMessage.new_from_json_dict(flex)
+                line_bot_api.reply_message(msg_from,messages=container_obj)
+            else:
+                up[user_id]['n'] = 6
+                line_bot_api.reply_message(msg_from,TextSendMessage(text="httpsからはじまるURLをもう一度送信してください"))
             return
         if user_id == up[user_id]['user_id'] and up[user_id]['n'] == 8:
-            up[user_id]['n'] = 9
-            up[user_id]['t_url'] = msg_text
-            data = uptest(up[user_id]['t_url'],'up5','up4')
-            flex = {"type": "flex","altText": "確認","contents":data}
-            container_obj = FlexSendMessage.new_from_json_dict(flex)
-            line_bot_api.reply_message(msg_from,messages=container_obj)
+            if 'https://' in msg_text:
+                up[user_id]['n'] = 9
+                up[user_id]['t_url'] = msg_text
+                data = uptest(up[user_id]['t_url'],'up5','up4')
+                flex = {"type": "flex","altText": "確認","contents":data}
+                container_obj = FlexSendMessage.new_from_json_dict(flex)
+                line_bot_api.reply_message(msg_from,messages=container_obj)
+            else:
+                up[user_id]['n'] = 8
+                line_bot_api.reply_message(msg_from,TextSendMessage(text="httpsからはじまるURLをもう一度送信してください"))
             return
         if user_id == up[user_id]['user_id'] and up[user_id]['n'] == 11:
             up[user_id]['n'] = 12
