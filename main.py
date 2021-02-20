@@ -4772,7 +4772,7 @@ def c6(edi):
             "size": "full",
             "aspectRatio": "20:13",
             "aspectMode": "cover",
-            "url": profile.pictureUrl
+            "url": profile.picture_url
           },
           "body": {
             "type": "box",
