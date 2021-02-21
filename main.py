@@ -4924,6 +4924,78 @@ def c6(edi):
     }
     return data
 
+def es():
+    data = {
+      "type": "carousel",
+      "contents": [
+        {
+          "type": "bubble",
+          "hero": {
+            "type": "image",
+            "size": "full",
+            "aspectRatio": "20:13",
+            "aspectMode": "cover",
+            "url": "https://live.staticflickr.com/65535/50834110728_2bf3aa2a93_o_d.jpg"
+          },
+          "body": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "Editor Search",
+                "wrap": True,
+                "weight": "bold",
+                "size": "xxl",
+                "align": "center"
+              },
+              {
+                "type": "box",
+                "layout": "baseline",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "Editor Searchは\n動画編集者とクライアント様を\n簡単に繋げるツールです",
+                    "wrap": True,
+                    "weight": "bold",
+                    "size": "md",
+                    "align": "center"
+                  }
+                ]
+              }
+            ]
+          },
+          "footer": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "button",
+                "style": "primary",
+                "action": {
+                  "type": "message",
+                  "label": "動画編集者を探す",
+                  "text": "編集者を探す"
+                }
+              },
+              {
+                "type": "button",
+                "action": {
+                  "type": "message",
+                  "label": "自分の情報を登録する",
+                  "text": "情報アップ"
+                },
+                "style": "secondary"
+              }
+            ]
+          }
+        }
+      ]
+    }
+    return data
+
 '''
 def updata():
     data = {}
@@ -5415,6 +5487,14 @@ def handle_message(event):
         flex = {"type": "flex","altText": "ジャンル1","contents":data}
         container_obj = FlexSendMessage.new_from_json_dict(flex)
         line_bot_api.reply_message(msg_from,messages=container_obj)
+
+    if msg_text == 'Editor Search':
+        data = es()
+        set[user_id] = {'user_id':user_id,'n':1,'twitter':'','d_n':'','d_t':'','text':''}
+        flex = {"type": "flex","altText": "Editor Search","contents":data}
+        container_obj = FlexSendMessage.new_from_json_dict(flex)
+        line_bot_api.reply_message(msg_from,messages=container_obj)
+        return
 
 
 
