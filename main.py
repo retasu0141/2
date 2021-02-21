@@ -5021,7 +5021,7 @@ def es():
               },
               {
                 "type": "text",
-                "text": "Editor Searchの注意点として\n動画編集者の紹介につかう名前と\n画像はLINEアカウントから引用されます。",
+                "text": "Editor Searchの注意点として\n動画編集者の紹介に使う名前と\n画像はLINEアカウントから引用されます。",
                 "wrap": True,
                 "size": "xs",
                 "align": "center",
@@ -5271,7 +5271,7 @@ def addflex():
               },
               {
                 "type": "text",
-                "text": "Editor Searchの注意点として\n動画編集者の紹介につかう名前と\n画像はLINEアカウントから引用されます。",
+                "text": "Editor Searchの注意点として\n動画編集者の紹介に使う名前と\n画像はLINEアカウントから引用されます。",
                 "wrap": True,
                 "size": "xs",
                 "align": "center",
