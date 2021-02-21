@@ -8,7 +8,7 @@ from linebot.exceptions import (
     InvalidSignatureError
 )
 from linebot.models import (
-    MessageEvent, JoinEvent, TextMessage, TextSendMessage, FlexSendMessage,  PostbackEvent, TemplateSendMessage,ButtonsTemplate,URIAction,QuickReplyButton,QuickReply
+    MessageEvent, FollowEvent, JoinEvent, TextMessage, TextSendMessage, FlexSendMessage,  PostbackEvent, TemplateSendMessage,ButtonsTemplate,URIAction,QuickReplyButton,QuickReply
 )
 
 import time
@@ -4991,11 +4991,317 @@ def es():
               }
             ]
           }
+        },
+        {
+          "type": "bubble",
+          "hero": {
+            "type": "image",
+            "size": "full",
+            "aspectRatio": "20:13",
+            "aspectMode": "cover",
+            "url": "https://cdn.pixabay.com/photo/2016/10/11/21/21/sign-1732791_1280.jpg"
+          },
+          "body": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "Editor Searchの注意事項",
+                "wrap": True,
+                "weight": "bold",
+                "size": "xl",
+                "align": "center",
+                "margin": "md"
+              },
+              {
+                "type": "separator",
+                "margin": "xxl"
+              },
+              {
+                "type": "text",
+                "text": "Editor Searchの注意点として\n動画編集者の紹介につかう名前と\n画像はLINEアカウントから引用されます。",
+                "wrap": True,
+                "size": "xs",
+                "align": "center",
+                "margin": "md"
+              },
+              {
+                "type": "separator",
+                "margin": "md"
+              },
+              {
+                "type": "text",
+                "text": "・ LINEのアカウント名\n・LINEのアイコン画像\nの使用が許可できる方のみ\n情報の登録をしてください",
+                "wrap": True,
+                "size": "md",
+                "align": "center",
+                "margin": "md",
+                "weight": "bold"
+              }
+            ]
+          },
+          "footer": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": []
+          }
         }
       ]
     }
     return data
 
+def addflex():
+    data = {
+      "type": "carousel",
+      "contents": [
+        {
+          "type": "bubble",
+          "hero": {
+            "type": "image",
+            "size": "full",
+            "aspectRatio": "20:13",
+            "aspectMode": "cover",
+            "url": "https://live.staticflickr.com/65535/50834110728_2bf3aa2a93_o_d.jpg"
+          },
+          "body": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "ようこそ！",
+                "wrap": True,
+                "weight": "bold",
+                "size": "xxl",
+                "align": "center"
+              },
+              {
+                "type": "box",
+                "layout": "baseline",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "Editor’s Camp受付アカウントへ\nようこそ",
+                    "wrap": True,
+                    "weight": "bold",
+                    "size": "md",
+                    "align": "center"
+                  }
+                ]
+              },
+              {
+                "type": "separator"
+              },
+              {
+                "type": "text",
+                "text": "このアカウントでは\n・オープンチャットへの参加案内\n・Editor Search(編集者マッチング機能)\nを行うことができます",
+                "wrap": True,
+                "size": "sm",
+                "align": "center",
+                "margin": "md"
+              }
+            ]
+          },
+          "footer": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "button",
+                "style": "primary",
+                "action": {
+                  "type": "uri",
+                  "label": "アカウント制作者Twitter",
+                  "uri": "https://twitter.com/retasu_0141"
+                },
+                "color": "#55acee"
+              }
+            ]
+          }
+        },
+        {
+          "type": "bubble",
+          "hero": {
+            "type": "image",
+            "size": "full",
+            "aspectRatio": "20:13",
+            "aspectMode": "cover",
+            "url": "https://cdn.pixabay.com/photo/2016/08/11/22/12/door-1587023_1280.jpg"
+          },
+          "body": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "オープンチャットへ\n参加する",
+                "wrap": True,
+                "weight": "bold",
+                "size": "xl",
+                "align": "center",
+                "margin": "lg"
+              },
+              {
+                "type": "separator",
+                "margin": "xxl"
+              },
+              {
+                "type": "text",
+                "text": "下の参加ボタンを押すか\nトーク画面下のメニューの\n[Editor’s Camp]ボタンを押して\n参加してください",
+                "wrap": True,
+                "size": "sm",
+                "align": "center",
+                "margin": "md"
+              }
+            ]
+          },
+          "footer": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "button",
+                "style": "primary",
+                "action": {
+                  "type": "message",
+                  "label": "オープンチャットへ参加する",
+                  "text": "Editor‘s Campに入る"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "bubble",
+          "hero": {
+            "type": "image",
+            "size": "full",
+            "aspectRatio": "20:13",
+            "aspectMode": "cover",
+            "url": "https://cdn.pixabay.com/photo/2018/09/26/09/24/board-3704097_1280.jpg"
+          },
+          "body": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "Editor Search",
+                "wrap": True,
+                "weight": "bold",
+                "size": "xxl",
+                "align": "center"
+              },
+              {
+                "type": "box",
+                "layout": "baseline",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "Editor Searchは\n動画編集者とクライアント様を\n簡単に繋げるツールです",
+                    "wrap": True,
+                    "weight": "bold",
+                    "size": "md",
+                    "align": "center"
+                  }
+                ]
+              }
+            ]
+          },
+          "footer": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "button",
+                "style": "primary",
+                "action": {
+                  "type": "message",
+                  "label": "動画編集者を探す",
+                  "text": "編集者を探す"
+                }
+              },
+              {
+                "type": "button",
+                "action": {
+                  "type": "message",
+                  "label": "自分の情報を登録する",
+                  "text": "情報アップ"
+                },
+                "style": "secondary"
+              }
+            ]
+          }
+        },
+        {
+          "type": "bubble",
+          "hero": {
+            "type": "image",
+            "size": "full",
+            "aspectRatio": "20:13",
+            "aspectMode": "cover",
+            "url": "https://cdn.pixabay.com/photo/2016/10/11/21/21/sign-1732791_1280.jpg"
+          },
+          "body": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "Editor Searchの注意事項",
+                "wrap": True,
+                "weight": "bold",
+                "size": "xl",
+                "align": "center",
+                "margin": "md"
+              },
+              {
+                "type": "separator",
+                "margin": "xxl"
+              },
+              {
+                "type": "text",
+                "text": "Editor Searchの注意点として\n動画編集者の紹介につかう名前と\n画像はLINEアカウントから引用されます。",
+                "wrap": True,
+                "size": "xs",
+                "align": "center",
+                "margin": "md"
+              },
+              {
+                "type": "separator",
+                "margin": "md"
+              },
+              {
+                "type": "text",
+                "text": "・ LINEのアカウント名\n・LINEのアイコン画像\nの使用が許可できる方のみ\n情報の登録をしてください",
+                "wrap": True,
+                "size": "md",
+                "align": "center",
+                "margin": "md",
+                "weight": "bold"
+              }
+            ]
+          },
+          "footer": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": []
+          }
+        }
+      ]
+    }
+    return data
 '''
 def updata():
     data = {}
@@ -5164,6 +5470,13 @@ def join(event):
     container_obj = FlexSendMessage.new_from_json_dict(flex)
     line_bot_api.reply_message(reply_token,messages=container_obj)'''
 
+
+@handler.add(FollowEvent)
+def handle_follow(event):
+    data = addflex()
+    flex = {"type": "flex","altText": "はじめまして","contents":data}
+    container_obj = FlexSendMessage.new_from_json_dict(flex)
+    line_bot_api.reply_message(event.reply_token,messages=container_obj)
 
 @handler.add(PostbackEvent)
 def on_postback(event):
