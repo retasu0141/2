@@ -5813,87 +5813,88 @@ def handle_message(event):
 
 
     else:
-        if user_id == up[user_id]['user_id'] and up[user_id]['n'] == 2:
-            up[user_id]['n'] = 3
-            up[user_id]['one_text'] = msg_text
-            data = uptest(up[user_id]['one_text'],'up2','up1')
-            flex = {"type": "flex","altText": "確認","contents":data}
-            container_obj = FlexSendMessage.new_from_json_dict(flex)
-            line_bot_api.reply_message(msg_from,messages=container_obj)
-            return
-        if user_id == up[user_id]['user_id'] and up[user_id]['n'] == 4:
-            up[user_id]['n'] = 5
-            up[user_id]['text'] = msg_text
-            data = uptest(up[user_id]['text'],'up3','up2')
-            flex = {"type": "flex","altText": "確認","contents":data}
-            container_obj = FlexSendMessage.new_from_json_dict(flex)
-            line_bot_api.reply_message(msg_from,messages=container_obj)
-            return
-        if user_id == up[user_id]['user_id'] and up[user_id]['n'] == 6:
-            if 'https://' in msg_text:
-                up[user_id]['n'] = 7
-                up[user_id]['y_url'] = msg_text
-                data = uptest(up[user_id]['y_url'],'up4','up3')
+        try:
+            if user_id == up[user_id]['user_id'] and up[user_id]['n'] == 2:
+                up[user_id]['n'] = 3
+                up[user_id]['one_text'] = msg_text
+                data = uptest(up[user_id]['one_text'],'up2','up1')
                 flex = {"type": "flex","altText": "確認","contents":data}
                 container_obj = FlexSendMessage.new_from_json_dict(flex)
                 line_bot_api.reply_message(msg_from,messages=container_obj)
-            else:
-                up[user_id]['n'] = 6
-                line_bot_api.reply_message(msg_from,TextSendMessage(text="httpsからはじまるURLをもう一度送信してください"))
-            return
-        if user_id == up[user_id]['user_id'] and up[user_id]['n'] == 8:
-            if 'https://' in msg_text:
-                up[user_id]['n'] = 9
-                up[user_id]['t_url'] = msg_text
-                data = uptest(up[user_id]['t_url'],'up5','up4')
+                return
+            if user_id == up[user_id]['user_id'] and up[user_id]['n'] == 4:
+                up[user_id]['n'] = 5
+                up[user_id]['text'] = msg_text
+                data = uptest(up[user_id]['text'],'up3','up2')
                 flex = {"type": "flex","altText": "確認","contents":data}
                 container_obj = FlexSendMessage.new_from_json_dict(flex)
                 line_bot_api.reply_message(msg_from,messages=container_obj)
-            else:
-                up[user_id]['n'] = 8
-                line_bot_api.reply_message(msg_from,TextSendMessage(text="httpsからはじまるURLをもう一度送信してください"))
-            return
-        if user_id == up[user_id]['user_id'] and up[user_id]['n'] == 11:
-            up[user_id]['n'] = 12
-            up[user_id]['s_g1'] = msg_text
-            data = uptest(up[user_id]['s_g1'],'up7','up5')
-            flex = {"type": "flex","altText": "確認","contents":data}
-            container_obj = FlexSendMessage.new_from_json_dict(flex)
-            line_bot_api.reply_message(msg_from,messages=container_obj)
-            return
-        if user_id == up[user_id]['user_id'] and up[user_id]['n'] == 14:
-            up[user_id]['n'] = 15
-            up[user_id]['s_g2'] = msg_text
-            data = uptest(up[user_id]['s_g2'],'up9','up7')
-            flex = {"type": "flex","altText": "確認","contents":data}
-            container_obj = FlexSendMessage.new_from_json_dict(flex)
-            line_bot_api.reply_message(msg_from,messages=container_obj)
-            return
-
-        if user_id == set[user_id]['user_id'] and set[user_id]['n'] == 3:
-            set[user_id]['n'] = 4
-            set[user_id]['twitter'] = msg_text
-            data = data1(set[user_id]['twitter'])
-            flex = {"type": "flex","altText": "確認","contents":data}
-            container_obj = FlexSendMessage.new_from_json_dict(flex)
-            line_bot_api.reply_message(msg_from,messages=container_obj)
-            return
-        if user_id == set[user_id]['user_id'] and set[user_id]['n'] == 5:
-            set[user_id]['n'] = 6
-            set[user_id]['d_n'] = msg_text
-            data = data3(set[user_id]['d_n'])
-            flex = {"type": "flex","altText": "確認","contents":data}
-            container_obj = FlexSendMessage.new_from_json_dict(flex)
-            line_bot_api.reply_message(msg_from,messages=container_obj)
-            return
-        if user_id == set[user_id]['user_id'] and set[user_id]['n'] == 7:
-            set[user_id]['n'] = 8
-            set[user_id]['d_t'] = msg_text
-            data = data7(set[user_id]['d_t'])
-            flex = {"type": "flex","altText": "確認","contents":data}
-            container_obj = FlexSendMessage.new_from_json_dict(flex)
-            line_bot_api.reply_message(msg_from,messages=container_obj)
-            return
+                return
+            if user_id == up[user_id]['user_id'] and up[user_id]['n'] == 6:
+                if 'https://' in msg_text:
+                    up[user_id]['n'] = 7
+                    up[user_id]['y_url'] = msg_text
+                    data = uptest(up[user_id]['y_url'],'up4','up3')
+                    flex = {"type": "flex","altText": "確認","contents":data}
+                    container_obj = FlexSendMessage.new_from_json_dict(flex)
+                    line_bot_api.reply_message(msg_from,messages=container_obj)
+                else:
+                    up[user_id]['n'] = 6
+                    line_bot_api.reply_message(msg_from,TextSendMessage(text="httpsからはじまるURLをもう一度送信してください"))
+                return
+            if user_id == up[user_id]['user_id'] and up[user_id]['n'] == 8:
+                if 'https://' in msg_text:
+                    up[user_id]['n'] = 9
+                    up[user_id]['t_url'] = msg_text
+                    data = uptest(up[user_id]['t_url'],'up5','up4')
+                    flex = {"type": "flex","altText": "確認","contents":data}
+                    container_obj = FlexSendMessage.new_from_json_dict(flex)
+                    line_bot_api.reply_message(msg_from,messages=container_obj)
+                else:
+                    up[user_id]['n'] = 8
+                    line_bot_api.reply_message(msg_from,TextSendMessage(text="httpsからはじまるURLをもう一度送信してください"))
+                return
+            if user_id == up[user_id]['user_id'] and up[user_id]['n'] == 11:
+                up[user_id]['n'] = 12
+                up[user_id]['s_g1'] = msg_text
+                data = uptest(up[user_id]['s_g1'],'up7','up5')
+                flex = {"type": "flex","altText": "確認","contents":data}
+                container_obj = FlexSendMessage.new_from_json_dict(flex)
+                line_bot_api.reply_message(msg_from,messages=container_obj)
+                return
+            if user_id == up[user_id]['user_id'] and up[user_id]['n'] == 14:
+                up[user_id]['n'] = 15
+                up[user_id]['s_g2'] = msg_text
+                data = uptest(up[user_id]['s_g2'],'up9','up7')
+                flex = {"type": "flex","altText": "確認","contents":data}
+                container_obj = FlexSendMessage.new_from_json_dict(flex)
+                line_bot_api.reply_message(msg_from,messages=container_obj)
+                return
+        except:
+            if user_id == set[user_id]['user_id'] and set[user_id]['n'] == 3:
+                set[user_id]['n'] = 4
+                set[user_id]['twitter'] = msg_text
+                data = data1(set[user_id]['twitter'])
+                flex = {"type": "flex","altText": "確認","contents":data}
+                container_obj = FlexSendMessage.new_from_json_dict(flex)
+                line_bot_api.reply_message(msg_from,messages=container_obj)
+                return
+            if user_id == set[user_id]['user_id'] and set[user_id]['n'] == 5:
+                set[user_id]['n'] = 6
+                set[user_id]['d_n'] = msg_text
+                data = data3(set[user_id]['d_n'])
+                flex = {"type": "flex","altText": "確認","contents":data}
+                container_obj = FlexSendMessage.new_from_json_dict(flex)
+                line_bot_api.reply_message(msg_from,messages=container_obj)
+                return
+            if user_id == set[user_id]['user_id'] and set[user_id]['n'] == 7:
+                set[user_id]['n'] = 8
+                set[user_id]['d_t'] = msg_text
+                data = data7(set[user_id]['d_t'])
+                flex = {"type": "flex","altText": "確認","contents":data}
+                container_obj = FlexSendMessage.new_from_json_dict(flex)
+                line_bot_api.reply_message(msg_from,messages=container_obj)
+                return
 
 
 
