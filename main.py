@@ -187,7 +187,7 @@ def syoukai():
             "contents": [
               {
                 "type": "text",
-                "text": "動画編集者の森へ招待！",
+                "text": "Editor’s Campへ招待！",
                 "wrap": True,
                 "color": "#666666",
                 "size": "sm",
