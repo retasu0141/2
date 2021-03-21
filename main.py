@@ -399,7 +399,7 @@ def twitter():
             "contents": [
               {
                 "type": "text",
-                "text": "・あつまれ動画編集の森では信頼を大切にしています。",
+                "text": "・Editor’s Campでは信頼を大切にしています。",
                 "wrap": True,
                 "color": "#666666",
                 "size": "sm",
