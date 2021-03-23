@@ -31,6 +31,35 @@ app = Flask(__name__)
 set = {}
 up = {}
 
+
+DEVELOPER_KEY = "AIzaSyDFBCD1FCBGX2_Wdt2jhedKW13y3E0QlZw"
+YOUTUBE_API_SERVICE_NAME = "youtube"
+YOUTUBE_API_VERSION = "v3"
+
+def pick_up_vid(url):
+  pattern_watch = 'https://www.youtube.com/watch?'
+  pattern_short = 'https://youtu.be/'
+
+
+  if re.match(pattern_watch,url):
+    yturl_qs = urllib.parse.urlparse(url).query
+    vid = urllib.parse.parse_qs(yturl_qs)['v'][0]
+    return vid
+
+    # 短縮URLのとき
+  elif re.match(pattern_short,url):
+    # "https://youtu.be/"に続く11文字が動画ID
+    vid = url[17:28]
+    return vid
+
+
+def sum(date):
+    payload = {'id': pick_up_vid(date), 'part': 'contentDetails,statistics,snippet', 'key': DEVELOPER_KEY}
+    l = requests.Session().get('https://www.googleapis.com/youtube/v3/videos', params=payload)
+    resp_dict = json.loads(l.content)
+    sum_ = resp_dict['items'][0]['snippet']['thumbnails']['standard']['url']
+    return sum_
+
 def get_connection():
     dsn = os.environ.get('DATABASE_URL')
     return psycopg2.connect(dsn)
@@ -5763,6 +5792,12 @@ def handle_message(event):
         line_bot_api.reply_message(msg_from,TextSendMessage(text=user_id))
         return
 
+
+    if msg_text == 'サムネイル保存':
+        set[user_id] = {'user_id':user_id,'n':36,'twitter':'','d_n':'','d_t':'','text':''}
+        line_bot_api.reply_message(msg_from,TextSendMessage(text='YouTubeのリンクを送信してください！'))
+        return
+
     if msg_text == "情報アップ":
         up,user_data = idcheck(user_id)
         up[user_id]['n'] = 1
@@ -5894,6 +5929,15 @@ def handle_message(event):
                 flex = {"type": "flex","altText": "確認","contents":data}
                 container_obj = FlexSendMessage.new_from_json_dict(flex)
                 line_bot_api.reply_message(msg_from,messages=container_obj)
+                return
+            if user_id == set[user_id]['user_id'] and set[user_id]['n'] == 36:
+                url = sum(msg_text)
+                image_message = ImageSendMessage(
+                    original_content_url=url,
+                    preview_image_url=url,
+                )
+                line_bot_api.reply_message(event.reply_token, image_message)
+                #line_bot_api.reply_message(msg_from,TextSendMessage(text='YouTubeのリンクを送信してください！'))
                 return
 
 
